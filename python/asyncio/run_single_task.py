@@ -8,6 +8,11 @@ async def hey(name):
     print('done')
 
 async def single_task():
+    """ GOTCHA - tasks run this way must have active references,
+    otherwise they can be garbage collected (keeping them
+    in a container is a good idea). Below there isn't any
+    problem as all tasks are all contained in the main function.
+    """
     print('single_task')
     start = time()
     # if task is awaited directly, there will be
