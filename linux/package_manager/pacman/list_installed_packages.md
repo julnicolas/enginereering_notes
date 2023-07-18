@@ -15,3 +15,8 @@ by providing a pattern to the `s` option such as:
 pacman -Qs go
 ```
 
+It is then possible to show package names only (with a search on name *and* description still):
+``` sh
+pacman -Qsq <package name, i.e. qt>
+```
+
