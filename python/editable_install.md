@@ -22,3 +22,20 @@ pip install -e .
 Note - pip uses a `setup.py` file or a `pyproject.toml` file for the
 installation.
 
+## A note on extra dependencies in setup.py
+Let's consider the following exerpt from a `setup.py` file:
+``` python
+setup(
+    ...
+    extras_require={
+        'extra_feature': ['dependency3', 'dependency4']
+    }
+    ...
+)
+```
+
+To local/edit install `extra_feature` on top of the rest of dependencies, the syntax is:
+``` sh
+pip install -e .[extra_feature]
+```
+
