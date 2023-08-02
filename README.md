@@ -21,6 +21,6 @@ fzfp() {
 	if [ -n "$1" ]; then
 		PLANG="-l $1"
 	fi
-	fzf --preview="bat --color always $PLANG {}"
+	fzf --exact --preview="bat --color always $PLANG {}"
 }
 ```
