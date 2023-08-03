@@ -1,0 +1,11 @@
+get
+setdefault
+pop
+popitem
+keys
+items
+values
+update
+fromkeys
+clear
+copy
