@@ -1,0 +1,7 @@
+# This file displays an example configuration
+# You can insert anything below in your pyproject.toml
+
+# increase line length from 79 to 120
+[tool.black]
+line-length = 120
+
