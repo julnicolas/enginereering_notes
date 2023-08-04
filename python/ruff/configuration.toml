@@ -1,0 +1,35 @@
+# This file contains usable configuration as an example
+# It is possible to insert it pyproject.toml files
+
+[tool.ruff]
+line-length = 120
+# Enable:
+# - pycodestyle (E, W)
+# - pyflakes (f)
+# - isort (I)
+# - MCCabe Cpxity (cyclomatic) (C90)
+# - Pep8 Naming (N)
+# - Pydocstyle (D)
+# - pyupgrade (UP)
+# - flake8-blind-except (BLE)
+# - flake8-boolean-trap (FBT)
+# - flake8-builtins (A)
+# - flake8-comprehensions (C4)
+# - flake8-implicit-str-concat (ISC)
+# -  flake8-logging-format (G)
+# - flake8-pytest-style (PT)
+# - Ruff specifics (RUF)
+# - tryceratops (TRY)
+select = ["E", "F", "W", "I", "C90", "N",
+#			"D",
+			"UP",
+			"BLE",
+			"FBT",
+			"A",
+			"C4",
+			"ISC",
+			"G",
+			"PT",
+			"RUF",
+			"TRY",
+]
