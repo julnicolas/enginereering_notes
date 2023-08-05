@@ -74,6 +74,8 @@ async def f():
     # do other things
 
 async def main():
+    # Note - if f is passed without parenthesis, f is of type function whereas
+    # f() is of the coroutine type!
     t1 = asyncio.create_task(f())
     await t1
 
