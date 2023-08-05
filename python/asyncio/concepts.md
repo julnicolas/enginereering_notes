@@ -28,8 +28,10 @@ for the python coroutine object is carried out using the `asyncio.sleep` functio
 
 ## Main asyncio components
 - `Task`: a task is a user provided coroutine object whose execution is
-    managed (ran then resumed if needed) by asyncio. Tasks are created with
-    `asyncio.create_task`
+    managed (run then resumed if needed) by asyncio. Tasks are created with
+    `asyncio.create_task`. Tasks are executed `concurently` by asyncio.
+    When a coroutine is run without using a Task object, coroutine execution
+    is sequential (as they have to be awaited).
 - `TaskGroup`: a task group is an aggregate of tasks. They are used to batch
     await operations on the whole group
 - `Future`: low level asyncio object. One of the building blocks of the Task
