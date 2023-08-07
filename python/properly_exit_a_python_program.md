@@ -20,8 +20,9 @@ and unix plateforms.
 ## The program terminates due to an uncaught exception
 An exception has been raised but not caught by any user code.
 
-The python interpreter catches any uncaught exception, calls
-`__at_exit__` then returns a non zero error code.
+The python interpreter catches any uncaught exception, prints the exception
+(except for `SystemExit`) then terminates the thread (the whole process if
+there are only one thread or the terminated thread is the main thread).
 
 ### Gotcha
 The `__at_exit__` function gets called only if the exception was raised in
