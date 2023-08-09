@@ -2,22 +2,23 @@
 
 requests.get is equivalent to requests.request(method="GET").
 """
-import requests
 import logging as log
 import sys
 
-url = 'https://example.com'
+import requests
+
+url = "https://example.com"
 url = "https://blah.com"
 params = {
-    'param_1': 'value_1',
-    'param_2': 'value_2',
+    "param_1": "value_1",
+    "param_2": "value_2",
 }
-timeout = 2 # In seconds
+timeout = 2  # In seconds
 
 # Timeout is in seconds
 try:
     response = requests.get(url, params=params, timeout=timeout)
-    # Raises a HTTPError if r.status_code >= 400 
+    # Raises a HTTPError if r.status_code >= 400
     response.raise_for_status()
 except requests.ConnectionError:
     log.error("couldn't connect to server")
@@ -36,7 +37,7 @@ except requests.Timeout:
 print(f"content-type == {response.headers['Content-Type']}")
 
 ## Get content as bytes
-#print(response.content)
+# print(response.content)
 
 ## Show response as a raw str
 print(response.text)
@@ -44,4 +45,4 @@ print(response.text)
 ## Show response with JSON body
 # raise a JSONDecodeError if the content is
 # not in json
-#print(response.json())
+# print(response.json())
