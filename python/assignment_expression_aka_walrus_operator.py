@@ -10,6 +10,8 @@ This feature comes from the functional programming pattern.
 import os
 
 # Setting up environments vars for follow up example
+# Note - depending on the OS, setting env vars this way
+# may not work
 os.environ["ENV1"] = "env1 value"
 os.environ["ENV2"] = "env2 value"
 
