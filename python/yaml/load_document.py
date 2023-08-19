@@ -11,8 +11,13 @@ if not len(argv) > 1:
 path = argv[1]
 
 # Open the file then parse its content
+# Only one yaml document will be parsed
+# even if several are contained in f.
+#
+# use full_load_all to return a list
+# of yaml documents for this case
 with open(path) as f:
-    yml = yaml.load_all(f)
+    yml = yaml.full_load(f)
 
 # Then the yml file can be accessed as a dict
 print(yml)
