@@ -3,6 +3,8 @@
 
 [tool.ruff]
 line-length = 120
+# Do not remove unused imports in __init__ files
+ignore-init-module-imports = true
 # Enable:
 # - pycodestyle (E, W)
 # - pyflakes (f)
