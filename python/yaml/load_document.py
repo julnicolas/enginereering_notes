@@ -1,4 +1,5 @@
 """Loads only one yaml document contained in a file."""
+# pip install pyyaml
 import yaml
 
 # for the example, provide a path to a yaml file
