@@ -14,6 +14,10 @@
  * class defines a non const version with the same signature (except the const property).
  * If, a function const references the child object then the parent's const version will
  * be called and the non-const apparently overriding version will not be.
+ *
+ * Note: To have the compiler output an error if one attempts to override a function version
+ * (const or not) use the override specifier. An error will only be thrown by the compiler if
+ * only one of the two versions is defined and the wrong one is beeing overriden.
 */
 
 using namespace std;

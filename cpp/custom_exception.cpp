@@ -13,7 +13,10 @@ class MyError: public std::exception  {
 	public:
 		// const keywords are important here otherwise unexpected what version can be called.
 		// please check the const_override.cpp program for further information.
-		virtual const char* what() const noexcept;
+		//
+		// By adding the override keyword the linter outputs an error but it can certainly be
+		// ignored.
+		virtual const char* what() const noexcept override;
 		virtual ~MyError() = default;
 };
 
