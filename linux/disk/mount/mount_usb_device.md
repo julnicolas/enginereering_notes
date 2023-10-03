@@ -1,4 +1,9 @@
 # Mount USB Device
+
+Read below to have a refined understanding.
+Otherwise use 'lscusb' for `ls connected usb`.
+I developped this small program to save some time!
+
 ## Find the usb storage's bus and port
 First identify the device using:
 ``` sh
