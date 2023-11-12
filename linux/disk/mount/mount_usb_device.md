@@ -1,8 +1,10 @@
 # Mount USB Device
 
 Read below to have a refined understanding.
-Otherwise use 'lscusb' for `ls connected usb`.
+Otherwise use 'lsbusb' for `ls block devices connect via usb`.
 I developped this small program to save some time!
+
+Another good alternative if not better is `lsblk`.
 
 ## Find the usb storage's bus and port
 First identify the device using:
