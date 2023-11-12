@@ -12,7 +12,7 @@ app = FastAPI()
 
 
 @app.get("/")
-def root():
+async def root():
     return {"msg": "hello"}
 
 
@@ -24,7 +24,7 @@ class Names(StrEnum):
 # Any other names than present in Names
 # Will return a 422 error
 @app.get("/name/{fixed_name}")
-def name(fixed_name: Names):
+async def name(fixed_name: Names):
     match fixed_name:
         case "sonic":
             return {"msg": "I'm Sonic the Hedgehog"}
@@ -36,5 +36,5 @@ def name(fixed_name: Names):
 # As the path parameter after name/ is already
 # evaluated above
 @app.get("/name/{fname}")
-def name(fname: str):
+async def name(fname: str):
     return {"msg": f"I am {fname}"}
