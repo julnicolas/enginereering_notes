@@ -44,3 +44,4 @@ try:
     PositivePosition(x=-1, y=-2)
 except NegativePositionError as e:
     print(f"### Validation error:\n\t{e}")
+
