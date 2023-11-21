@@ -4,8 +4,8 @@ skip copy operations without impacting programs' correcteness.
 
 Said differently, it will remove redundant copy operations from copy constructors.
 
-It is important to know that copy ellision is dependent on compilers' optimisation
-strategies and may vary between compilers.
+Copy ellision is a standardized optimisation. For optimisation details please check:
+https://en.cppreference.com/w/cpp/language/copy_elision 
 
 ``` cpp
 void f(A);
