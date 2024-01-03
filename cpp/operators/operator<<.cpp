@@ -67,6 +67,23 @@ namespace str_functions {
 }
 
 // construct std::string from move constructor
+// std::move must absolutely be called as std::string()
+// creates a lvalue
+// Only values passed in the following cases can be considered
+// rvalue or rvalue references:
+// - explicitely returned rvalue references
+// - literalls
+// - std::move lvalue or lvalue references can be considered
+// 	rvalue or rvalue references
+//
+// 	a rvalue is a litteral value or a value that has no existance in memory
+// 		-> a static (static as of available at compile time) value
+// 	a rvalue reference is either:
+// 	- a reference to a rvalue
+// 	- a reference to a lvalue but the rvalue references carries a sense of 
+// 		change of ownership. Meaning, moved objects shouldn't be reused (as
+// 		state is not guaranted). Also, move operators will be called on these
+// 		values.
 #define s(cstr) std::move(str_functions::s(cstr))
 
 int main(int argc, char* argv[]) {
