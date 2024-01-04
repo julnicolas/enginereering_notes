@@ -19,12 +19,40 @@
  * - exception is passed to the caller's scope
  *
  * Important: constructed object's destructor is *NOT* called.
- * Meaning all objects must carefully manage their resources,
- * no dynamic allocations should be carried out in constructors
- * as corresponding delete operations will not be called.
- * If such allocations, or any other system resource allocations
- * must be done, enclose them into corresponding, fine grained
- * objects.
+ * Meaning all objects must carefully manage their resources.
+ *
+ * What about dynamically allocated memory from constructors?
+ * ----------------------------------------------------------
+ * Let us remind that operator new returns a pointer to the 
+ * allocated object. Therefore, the corresponding attribute
+ * storing the address is a pointer.
+ *
+ * Now there is a big difference between raw pointers and smart
+ * pointers.
+ *
+ * Let's say the allocation goes well, the return value is stored
+ * in a raw pointer. After that, an exception is raised within the
+ * executing constructor. Therefore, as per above, all constructed
+ * fields' destructor is called. However, a raw pointer is merelly
+ * an int value. That means it doesn't have any destructor attached
+ * to it. Therefore its destructor is not executed.
+ *
+ * Then, as the failing constructor's corresponding destructor is not
+ * executed (as the object is partially constructed), previously allocated
+ * memory is not freed, thus resulting in a memory leak.
+ *
+ * Now, let us say that instead of storing operator new's result in a raw pointer
+ * it is stored in a smart pointer. Then corresponding smart pointer's destructor
+ * will be executed thus freeing the memory. Therefore, the memory leak is
+ * prevented.
+ *
+ * What about operator new?
+ * ------------------------
+ * As per the C++ standard if during a call to new, an exception is
+ * raised from a constructor, a matching (operator new) deallocation
+ * function is called to free memory. Then the exception is passed
+ * further up. If such deallocation cannot be found, then the exception
+ * is passed but memory is not freed. It results in a memory leak.
  *
  */
 #include <iostream>
