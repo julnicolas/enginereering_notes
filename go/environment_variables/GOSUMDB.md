@@ -12,3 +12,10 @@ falling back to a direct connection to the named database if it
 is not supported by any proxy. If GOSUMDB is set to off, the checksum 
 database is not consulted and only the existing checksums in the 
 go.sum file are verified.
+
+For any reason if the checksum cannot be reached by `go get` here is
+the way to disable it:
+``` sh
+export GOSUMDB=off
+```
+
