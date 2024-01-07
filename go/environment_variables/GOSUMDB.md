@@ -19,3 +19,10 @@ the way to disable it:
 export GOSUMDB=off
 ```
 
+## Value examples
+``` sh
+export GOSUMDB="sum.golang.org"
+export GOSUMDB="sum.golang.org+<publickey>"
+export GOSUMDB="sum.golang.org+<publickey> https://sum.golang.org"
+```
+
