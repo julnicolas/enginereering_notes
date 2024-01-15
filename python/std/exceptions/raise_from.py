@@ -14,7 +14,8 @@ def raising():
 
 try:
     raising()
-except RuntimeError as e:
-    logging.exception(e)
+except RuntimeError:
+    # Exception object automatically passed to logging.exception
+    logging.exception("give more context here")
 
 print("\n\n### All exceptions have been caught")
