@@ -12,5 +12,7 @@ cd /etc
 ln -s /run/systemd/resolve/resolv.conf
 ```
 
-Note - the list is maintained in an internal cache, this cache may have to be cleared
-so that resolv.conf can be updated (may be necessary on laptops).
+Note that the list may need to be refreshed if laptop or mobile
+changed its connection access point. Read relevent note to learn
+how to do so.
+
