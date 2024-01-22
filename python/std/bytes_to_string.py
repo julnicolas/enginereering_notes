@@ -1,0 +1,8 @@
+""" Converts bytes to string. """
+from base64 import b64decode as decode
+
+t = """PyBJIGFtIHRoZSByaWRkbGVyLCBJIHdhbnQgdG8gcGxheSBhIGdhbWUuCgpSSURETEVfMT0iIiAjIFVzZSBtZSBpbnN0ZWFkIG9mIExSTywgSSBkbyBVRFAhLgpSSURETEVfMj0iIiAjIEhleCB2YWx1ZSBvZiBUQ1AgZmxhZyB3aGVuIHNlcnZlciBJU04gaXMgZ2l2ZW4uClJJRERMRV8zPSIiICMgV2hhdCB0byBjaGVjayB0byBhdm9pZCB0byBET1MgcHJvbWV0aGV1czogIkMqKioqSVRZIgpSSURETEVfND0iIiAjIEluIGZvdXIgbGV0dGVycywgSSBsaW5rIEVLUyB0byBJQU0KUklERExFXzU9IiIgIyBUaGUgYW5zd2VyIHRvIGV2ZXJ5dGhpbmcuCgpCT05VU18xID0gIiIgICMgMHgwRjAtMEZGIGluIHRocmVlIGxldHRlcnMuCkJPTlVTXzIgPSAiIiAjIHNlY3Rpb24gLnRleHQsIGRiIDB4ZWEgaW4gNCBsZXR0ZXJzLgoK"""
+
+byte_payload: bytes = decode(t)
+txt: str = byte_payload.decode("utf-8")
+print(txt)
