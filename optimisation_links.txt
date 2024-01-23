@@ -1,0 +1,2 @@
+# RedHat guide on optimisation techniques (all round from CPU to Network cards)
+https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/performance_tuning_guide/network-nic-offloads
