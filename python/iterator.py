@@ -2,21 +2,15 @@
 in python. 
 
 An iterator is an object able to iterate over data of
-a custom class. Such objects must be able to iterate
+a custom class. Such objects should be able to iterate
 over and over on a class content for consistent use
+by other users
 (this is generally what's expected from an iterator
 as they are used in for loops).
 
-Co-routines implement the iterator pattern (they are
-defined with yield). It is possible to define coroutines
-that are iterable over and over for instance if they yield
-an iterator result.
-
-Generator expressions create generator which are objects
-that can be iterated only once. Then generated resources
-are used up. 
-
-A specific kind of iterator is called generators.
+Generators implement the iterator protocol, though
+depending on how they are implemented, they can
+be iterated over only once or several times.
 """
 
 
@@ -79,7 +73,10 @@ def f():
         yield v
 
 
-print("calling co-routine")
+# In other languages these functions would be called co-routines
+# however this type name is reserved for functions used with
+# the async await syntax
+print("calling generator defined with yield")
 print("call 1")
 for v in f():
     print(v)
