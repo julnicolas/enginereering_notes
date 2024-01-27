@@ -8,6 +8,7 @@ composition in maths.
 Below is a functional implemenation using closures.
 """
 from typing import Callable
+from functools import wraps
 
 
 def printer(f: Callable) -> Callable:
@@ -17,6 +18,11 @@ def printer(f: Callable) -> Callable:
     # restraining them and typing them
     # would be great for stricter scoped
     # decorators
+    #
+    # wraps must be used so that f.__name__
+    # and f.__doc__ point to f's data instead
+    # of inner's
+    @wraps(f)
     def inner(*args):
         # Save function in closure data to
         # call later
