@@ -25,9 +25,7 @@ func stopAfter(stop chan<- struct{}, dur time.Duration) {
 
 func main() {
 	c := make(chan int)
-	defer close(c)
 	stop := make(chan struct{}) 
-	defer close(stop)
 
 	go write(c)
 	go stopAfter(stop, 2*time.Second)

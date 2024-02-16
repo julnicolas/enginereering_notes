@@ -40,9 +40,7 @@ func WriteOnly(c chan<- int, stop chan<- StopSignal) {
 
 func main() {
 	c := make(chan int)
-	defer close(c)
 	stop := make(chan StopSignal)
-	defer close(stop)
 
 	go ReadOnly(c)
 	go WriteOnly(c, stop)

@@ -5,8 +5,9 @@ package main
 import "fmt"
 
 func main() {
-	c := make(chan int, 1) // to avoid locking
-	defer close(c)
+	// to avoid locking as I'm staying in
+	// the main go routine
+	c := make(chan int, 1)
 	
 	c <- 1
 	i := <- c
