@@ -38,6 +38,11 @@ FOR_LOOP:
 		// It is possible to use the default case to do something
 		// while waiting
 		select {
+		// It is possible to write to a channel in a select with the following
+		// syntax:
+		// case c <- some value:
+
+		// Wait on read
 		case i := <-c:
 			fmt.Printf("received %d\n", i)
 		case <- stop:
