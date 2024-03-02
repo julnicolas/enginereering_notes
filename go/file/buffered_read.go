@@ -16,7 +16,7 @@ func main() {
         logrus.Errorln(err)
         os.Exit(1)
     }
-    f.Close()
+    defer f.Close()
 
     var line string
     r := bufio.NewScanner(f)
