@@ -1,5 +1,4 @@
-# Buffered write
-``` go
+// Buffered write
 package main
 
 import (
@@ -35,4 +34,3 @@ func main() {
     // Call flush to make sure all bytes make it to the file
     w.Flush()
 }
-```

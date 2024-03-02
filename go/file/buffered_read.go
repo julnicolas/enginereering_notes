@@ -1,5 +1,4 @@
-# Buffered read
-``` go
+// Buffered read
 package main
 
 import (
@@ -31,4 +30,3 @@ func main() {
         os.Exit(1)
     }
 }
-```

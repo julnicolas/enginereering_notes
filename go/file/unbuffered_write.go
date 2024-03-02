@@ -1,5 +1,4 @@
-# Unbuffered write
-``` go
+// Unbuffered write
 package main
 
 import (
@@ -17,7 +16,6 @@ func main() {
     }
     defer f.Close()
 
-    somevar := "heyeheyeh hello
+    somevar := "heyeheyeh hello"
     fmt.Fprintf(f, "%s", somevar)
 }
-```

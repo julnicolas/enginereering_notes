@@ -1,5 +1,4 @@
-# Unbuffered read
-``` go
+// Unbuffered read
 package main
 
 import (
@@ -21,4 +20,3 @@ func main() {
     content := io.ReadAll(f)
     fmt.Println("now printing all", content)
 }
-```
