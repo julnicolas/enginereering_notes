@@ -12,6 +12,12 @@ import (
 
 func Hello(w http.ResponseWriter, r *http.Request) {
 	log.Println("called /hello")
+
+	if r.Method != http.MethodGet {
+		w.WriteHeader(http.StatusBadRequest)
+		return
+	}
+
 	fmt.Fprintf(w, "Hello!\n")
 }
 
