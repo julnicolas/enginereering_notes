@@ -6,12 +6,15 @@ from time import sleep
 # It supposedly decompress archives when streaming but in effect
 # it doesn't work. Gzipping processes must be done elsewhere.
 with urllib3.PoolManager(maxsize=10) as pool:
+    # This part can be implemented using a context manager
     resp = urllib3.request(
         "GET",
         "http://ftp.uk.debian.org/debian/dists/stable/main/Contents-amd64.gz",
         preload_content=False, # enables chunk-by-chunk download
         timeout=timeout,
     )
+    if resp.status >= 400:
+        raise RuntimeError("http error")
     
     chunk_size = 128
     # other way to query
