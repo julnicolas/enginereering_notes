@@ -1,10 +1,9 @@
 # This file contains usable configuration as an example
 # It is possible to insert it pyproject.toml files
-
 [tool.ruff]
 line-length = 120
 # Do not remove unused imports in __init__ files
-ignore-init-module-imports = true
+lint.ignore-init-module-imports = true
 # Enable:
 # - pycodestyle (E, W)
 # - pyflakes (f)
@@ -22,7 +21,7 @@ ignore-init-module-imports = true
 # - flake8-pytest-style (PT)
 # - Ruff specifics (RUF)
 # - tryceratops (TRY)
-select = ["E", "F", "W", "I", "C90", "N",
+lint.select = ["E", "F", "W", "I", "C90", "N",
 #			"D",
 			"UP",
 			"BLE",
@@ -35,3 +34,4 @@ select = ["E", "F", "W", "I", "C90", "N",
 			"RUF",
 			"TRY",
 ]
+
