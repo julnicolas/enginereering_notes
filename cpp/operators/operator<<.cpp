@@ -23,6 +23,8 @@ namespace from_foo {
 
 	// Define the operator as a non-member function
 	// it needs sufficient public interfaces to be able to render objects
+	//
+	// Gotcha - Do not forget the reference as basic_stream do not have copy constructors
 	template <typename T>
 	std::ostream& operator<<(std::ostream& stream, const foo<T>& f) {
 		stream << f.to_str();
