@@ -1,0 +1,8 @@
+---
+roles:
+  - name: geerlingguy.docker
+    version: "7.1.0" # note that ranges are not supported for roles
+
+collections:
+  - name: "community.general"
+    version: ">=8.6.0,<9.0.0"
