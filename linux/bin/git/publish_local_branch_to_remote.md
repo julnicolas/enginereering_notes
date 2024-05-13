@@ -1,5 +1,5 @@
 # Publish local branch to remote
 ``` sh
-git push origin --set-upstream $branch
+git push --set-upstream origin $branch
 ```
 
