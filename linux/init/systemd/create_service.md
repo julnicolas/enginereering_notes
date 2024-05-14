@@ -17,6 +17,7 @@ Type=simple
 Restart=always
 RestartSec=1
 User=ubuntu
+#WorkingDirectory=/home/app
 # file containing environment variables
 # the optional '-' means that no error
 # will be triggered if the file is not present
