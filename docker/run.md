@@ -8,6 +8,7 @@ sudo docker run -v ~/projects/freehowling/fh_db:/repository \
 --rm \ 
 [-it|d] \
 [--entrypoint /bin/sh] \
+[--restart on-failure[:max_retry]|always|unless-stopped|no]
 ci-image fh-python
 ```
 
