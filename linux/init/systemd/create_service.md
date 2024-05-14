@@ -11,6 +11,8 @@ Here is a sample content:
 Description=Echo service
 After=network.target
 StartLimitIntervalSec=0
+#StandardOutput=syslog
+#StandardError=syslog
 
 [Service]
 Type=simple
