@@ -12,11 +12,6 @@ Flag value can be passed with different formats:
 
 --help or -h shows help messages.
 
-Note - to define a more elaborated help message,
-it is necessary to define a new FlagSet with NewFlagSet.
-With this new FlagSet override the PrintDefault function
-to your liking.
-
 */
 
 import (
@@ -37,20 +32,21 @@ func main() {
 
 	// dst var, flag name, default value, help message
 	// writting --tall sets the tall flag to true, ommiting the value leave it to false
-	flag.BoolVar(&tall, "tall", false, "whether the person is tall or not")
+	flag.BoolVar(&tall, "tall", false, "sets the person as tall")
 	flag.StringVar(&name, "name", "", "person's name [required]")
 	flag.DurationVar(&someTime, "time", time.Second, "some duration for the example")
-	flag.UintVar(&age, "age", 0, "person's age")
+	flag.UintVar(&age, "age", 0, "person's age [required]")
 
 	// Parse the values to populate destination variables
 	flag.Parse()
 
 	// Validation code
 	if name == "" {
-		fmt.Println("error - empty name value")
-		// Print help message
-		flag.PrintDefaults()
-		os.Exit(1)
+		exitOnError("name is empty")
+	}
+
+	if age == 0 {
+		exitOnError("age is empty")
 	}
 
 	// Your app code
@@ -70,4 +66,10 @@ func tallOrSmall(tall bool) string {
 	} else {
 		return "small"
 	}
+}
+
+func exitOnError(msg string) {
+	fmt.Printf("error - %s\n", msg)
+	flag.Usage() // printf help message
+	os.Exit(1)
 }
