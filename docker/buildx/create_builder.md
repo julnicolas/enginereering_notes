@@ -21,11 +21,14 @@ To check emulator status run the above docker run command again.
 To create a new builder for one or several platforms:
 ``` sh
 docker buildx create \
---name arm-amd-64 \
+--name buildkit \
+--driver docker-container \
 --platform linux/amd64,linux/arm64 [--use]
 ```
 `--use` tells the docker engine to use the newly created
 builder as default.
+
+Note - I use `buildkit` as argument to `--name` but it can be anything.
 
 ## Gotchas
 Note - even doing as above, some commands may fail. Installing
