@@ -1,4 +1,4 @@
-# Download private packages
+# Add private package to project
 To be able to refer to private dependencies the following steps must be carried out.
 
 ## Authenticate to GCP with right service key
