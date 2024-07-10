@@ -16,6 +16,8 @@ This note gives guidelines to make efficient images.
     can be used extensively to save space.
 - `COPY` and `ADD` can be used with `--chown` so that an additional `RUN` layer
     can be avoided
+- fill your `.dockerignore` with any build artifact files or sensitive files
+    (__pycache__, ...)
 
 ### Quality Assessment tools
 Two good tools to monitor layers:
