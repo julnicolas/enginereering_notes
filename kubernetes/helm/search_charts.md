@@ -1,5 +1,5 @@
 # Search charts
 ``` sh
-helm search $name
+helm search hub $name
 ```
 
