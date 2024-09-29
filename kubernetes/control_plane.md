@@ -18,7 +18,7 @@ It is made up of the following components:
         - pod management (pod controller)
             responsible of noticing and reacting when pods go down
         - node management (node controller)
-            responsible of noticing and reacting when pods go down
+            responsible of noticing and reacting when nodes go down
         - EndPointSlice management (EndPointSlice controller)
             populates endpoint-slice objects to provide a link between
             services and pods
