@@ -1,0 +1,29 @@
+// This shows a basic helloworld protobuf
+// With a service, which is a structure
+// that serves traffic from a server
+// and which is callable from a client.
+
+syntax = "proto3";
+
+// In google's example, the source code is located in examples/helloworld
+// protos in examples/helloworld/helloworld
+option go_package = "google.golang.org/grpc/examples/helloworld/helloworld";
+
+package helloworld;
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message HelloReply {
+  string message = 1;
+}
+
